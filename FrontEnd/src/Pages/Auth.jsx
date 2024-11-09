@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import victory from "../assets/victory.svg"; // Adjust the path according to your project structure
 import Background from "../assets/login2.png"; // Adjust the path according to your project structure
 
@@ -9,14 +10,15 @@ const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  const handleLogin = async () => {};
+  const handleLogin = () => {
+    navigate("/homemid"); // Redirect to the homemid route
+  };
 
   const handleSignup = async () => {};
 
   return (
-
-    <div>
     <div className="h-[100vh] w-[100vw] flex items-center justify-center">
       <div className="h-[80vh] bg-white border-white text-opacity-90 shadow-2xl w-[88vw] md:w-[90vw] lg:w-[70vw] xl:w-[60vw] rounded-3xl grid xl:grid-cols-2">
         <div className="flex flex-col gap-10 items-center justify-center">
@@ -60,7 +62,7 @@ const Auth = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <Button className="rounded-full p-6 " onClick={handleLogin}>
+                <Button onClick={handleLogin} className="rounded-full p-6 ">
                   Login
                 </Button>
               </TabsContent>
@@ -98,9 +100,6 @@ const Auth = () => {
         </div>
       </div>
     </div>
-    </div>
-
-   
   );
 };
 

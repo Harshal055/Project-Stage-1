@@ -16,12 +16,14 @@ export function AuroraBackgroundDemo() {
     }, 3000); // Adjust the delay as needed
   };
 
+  
+
   return (
     <div className="w-full h-full">
       {loading ? (
         <div className="h-[60rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
           <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
-           Loding....
+          Note: We are currently working on this project; it is not the final version.
           </h1>
           <div className="w-[60rem] h-60 relative">
             {/* Gradients */}
@@ -73,6 +75,7 @@ export function AuroraBackgroundDemo() {
       )}
     </div>
   );
+   
 }
 
 export default AuroraBackgroundDemo;
